@@ -7,3 +7,19 @@ Example
 Input: "Jasmine Ann Jones"
 
 Output: "Jasmine%20Ann%20Jones"
+
+/*************************************************/
+Solution A:
+
+  1. Take the string and break it into an array using white space " " as the separator
+  .split() 
+  2. join the array back to a string using .join() with %20 as the joining factor
+
+
+function stringToURL(string) {
+  return string.split(' ').join('%20');
+}
+
+/************************************************/
+Solution B:
+const stringToURL = (string) => string.split(' ').join('%20');
