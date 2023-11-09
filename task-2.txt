@@ -41,3 +41,23 @@ for recursion we will need
 1. Termination - empty array
 2. Base case - finish the loop then index === array.length
 3. Recrusion - Iterate through the array and ommit the duplication
+
+const removeDuplication = (input, index = 0) => {
+
+  if (input.length === 0) {
+    return input;
+  }
+
+  if (index >= input.length) {
+    return input;
+  }
+
+  for (let i = index + 1; i < input.length; i++) {
+    if (input[index] === input[i]) {
+      input.splice(i, 1);
+      i--;
+    }
+  }
+
+  return removeDuplication(input, index +1)
+}
