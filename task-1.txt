@@ -20,6 +20,21 @@ function stringToURL(string) {
   return string.split(' ').join('%20');
 }
 
-/************************************************/
-Solution B:
+
+refactoring:
 const stringToURL = (string) => string.split(' ').join('%20');
+
+/************************************************/
+
+Solution B:
+
+for recursion we will need
+1. Termination
+2. Base case
+3. Recrusion itself
+
+1. Termination can be 2 white spaces
+2. Base case will be if the length of the string is equal to the index
+  (meaning we finish the loop)
+3. Iterate through the string and replace " " with "%20"
+
