@@ -1,0 +1,26 @@
+Question #2: Array Deduping
+Write an algorithm that removes duplicates from an array. Do not use a function like filter() to solve this. Once you have solved the problem, demonstrate how it can be solved with filter(). Solve the problem with and without recursion.
+
+Example
+Input: [7, 9, "hi", 12, "hi", 7, 53]
+
+Output: [7, 9, "hi", 12, 53]
+
+/*************************************************/
+Solution A:
+
+1. run a loop to cmpare every iteration of the loop with itself
+2. in case of duplication ommit the duplication
+
+function removeDuplication (input) {
+  for (let i = 0; i < input.length; i++) {
+    for (let j = 1; j < input.length; j++) {
+      if (input[i] === input[j]) {
+        input[j] = '';
+      }
+    }
+  }
+  return input;
+}
+
+removeDuplication([7, 12 ,12, 36, "hey", "stop", "hey"])
