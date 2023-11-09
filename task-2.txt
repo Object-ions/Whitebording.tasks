@@ -14,13 +14,30 @@ Solution A:
 
 function removeDuplication (input) {
   for (let i = 0; i < input.length; i++) {
-    for (let j = 1; j < input.length; j++) {
+    for (let j = i + 1 ; j < input.length; j++) {
       if (input[i] === input[j]) {
-        input[j] = '';
+        input.splice(j, 1);
+        j--;
       }
     }
   }
   return input;
 }
 
+function removeDuplication (input) {
+  return input.filter((item, index) => input.indexOf(item) === index)
+}
+
 removeDuplication([7, 12 ,12, 36, "hey", "stop", "hey"])
+
+/*************************************************/
+Solution B:
+
+for recursion we will need
+1. Termination - stop the loop
+2. Base case - finish the loop
+3. Recrusion itself - calling itself
+
+1. Termination - empty array
+2. Base case - finish the loop then index === array.length
+3. Recrusion - Iterate through the array and ommit the duplication
