@@ -17,7 +17,7 @@ function compressString(string) {
     if (string[i] === string[i + 1]) {
       count ++;
     } else {
-      compressedString += (count > 1 ? count: '') + string[i];
+      compressedString += (count > 1 ? count : '') + string[i];
       count = 1;
     }
   }
